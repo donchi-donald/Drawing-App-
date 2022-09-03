@@ -66,4 +66,27 @@ canvas.addEventListener('mouseup', (e) =>{
     y=undefined;
 })
 
+function updateSizeOnSreen(){
+    sizeEl.innerText = size;
+}
+
+increaseBtn.addEventListener('click', ()=>{
+    size += 5;
+    if(size > 50){
+        size = 50;
+    }
+    updateSizeOnSreen();
+})
+
+decreaseBtn.addEventListener('click', ()=>{
+    size -= 5;
+    if(size < 5){
+        size = 5;
+    }
+    updateSizeOnSreen();
+})
+
+clearEl.addEventListener('click', ()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+})
 //drawCircle(100, 200);
